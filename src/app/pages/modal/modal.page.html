@@ -9,10 +9,16 @@
 
 <ion-content>
 
-  <ion-card *ngFor='let d of datos'>
+  <ion-card>
+    <ion-item *ngIf='datos == 0' color='primary'>
+      <ion-card-title text-center> No tienes horario asigmando para este dia </ion-card-title>
+    </ion-item>
+  </ion-card>
 
-    <ion-item>
-        <ion-label text-capitalize> {{d.nombre}} {{d.apellido}} </ion-label>
+  <ion-card *ngFor='let d of datos'>
+    
+    <ion-item color='primary'>
+        <ion-label text-capitalize text-center> {{d.nombre}} {{d.apellido}} </ion-label>
     </ion-item>
 
     <ion-card-content>

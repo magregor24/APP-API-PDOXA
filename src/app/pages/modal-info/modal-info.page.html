@@ -1,21 +1,47 @@
-<ion-header no-border>
-  <ion-toolbar>
-    <ion-title text-capitalize> {{ nombre }} -- {{ pais }} </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
 
-<ion-content padding>
+    <ion-button (click)='salirSinArgumento()'color='primary' expand='full'>
+       Salir
+    </ion-button>
 
-  <ion-button (click)='salirSinArgumento()'
-              color='primary' 
-              expand='full'>
-    Salir sin argumentos
-  </ion-button>
+  <ion-card>
 
-  <ion-button (click)='salirConArgumento()'
-              color='secondary' 
-              expand='full'>
-    Salir con argumentos
-  </ion-button>
+    <ion-row>
+        <ion-col size='12'><h6 text-center>{{nombre}} {{apellido}}</h6></ion-col> 
+    </ion-row>
+
+    <ion-card-content>
+      <ion-row>
+          <ion-col size='12'><h6 text-center>Telefono: {{telefono}} | xxxxxxxxxxx</h6></ion-col> 
+      </ion-row>
+      <ion-row>
+          <ion-col size='12'><h6 text-center>Email: {{email}} | xxxxxx@xxxxx.com</h6></ion-col> 
+      </ion-row>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-grid>
+    <ion-card *ngFor='let d of datos'>
+
+      <ion-item color='success'><h5 text-center>Dia: {{d.dia}}</h5></ion-item>  
+        
+      <ion-row>
+          <ion-col size='6'><h6 text-center>Seccion:{{d.seccion}}</h6></ion-col> 
+          <ion-col size='6'><h6 text-center>Aula:{{d.nombreAula}}</h6> </ion-col> 
+      </ion-row>  
+
+      <ion-row>
+        <ion-col size='12'><h6 text-center>Materia:{{d.materia}}</h6></ion-col> 
+      </ion-row>
+
+      <ion-row>
+          <ion-col size='6'><h6 text-center>Inicio:{{d.inicio}}</h6></ion-col> 
+          <ion-col size='6'><h6 text-center>Fin:{{d.fin}}</h6> </ion-col> 
+      </ion-row> 
+        
+    </ion-card>
+  </ion-grid>  
+ 
 
 </ion-content>

@@ -14,7 +14,7 @@
     <ion-grid>
         <ion-row>
           <ion-col *ngFor="let p of profesores | filtro:textoBuscar: 'nombre','id' ">
-            <ion-item>
+            <ion-item (click)='profe(p)'>
                 <ion-col size='2' color='dark'> {{p.id}} </ion-col>
                 <ion-label> {{p.nombre}} </ion-label>
                 <ion-label> {{p.apellido}} </ion-label>

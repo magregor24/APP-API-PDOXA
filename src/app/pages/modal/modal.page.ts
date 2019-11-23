@@ -23,8 +23,6 @@ export class ModalPage implements OnInit {
 
   ngOnInit() {
 
-
-
     this.data.getLapso().subscribe(p=>{
       let ar = [];
       for(let i=0; i < p.length; i++){
@@ -35,8 +33,7 @@ export class ModalPage implements OnInit {
 
     })
 
-    console.log(this.id);
-
+    
     this.data.getDocentesId(this.id).subscribe(p=>{
       
       this.datos = p.filter(p=>{
@@ -44,6 +41,7 @@ export class ModalPage implements OnInit {
       })
     })
 
+   
 
   }
 

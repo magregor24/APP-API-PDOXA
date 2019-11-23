@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { ModalController } from '@ionic/angular';
+import { ModalInfoPage } from '../modal-info/modal-info.page';
 
 @Component({
   selector: 'app-profesores',
@@ -11,7 +13,7 @@ export class ProfesoresPage implements OnInit {
   profesores;
   textoBuscar = '';
   a:number = 10;
-  constructor(private datos:DataService) { }
+  constructor(private datos:DataService, private modalCtrl:ModalController) { }
 
   ngOnInit() {
 
@@ -42,5 +44,23 @@ export class ProfesoresPage implements OnInit {
      },200);
 
   }
+
+  
+  async profe(p){
+
+    const modal = await this.modalCtrl.create({
+       component: ModalInfoPage,
+       componentProps: {
+         id: p.id
+         
+       }
+ 
+     });
+ 
+     await modal.present();
+ 
+     const {data} = await modal.onDidDismiss();
+     console.log('retorno del modal', data);
+   }
 
 }
