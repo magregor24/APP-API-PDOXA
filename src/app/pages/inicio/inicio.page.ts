@@ -29,15 +29,16 @@ export class InicioPage implements OnInit {
     this.doce.forEach(e => {
       
       if(e[0].valid == 'true'){
-        
+        this.dataService.idProfe.emit(e[0].id);
         let NavigationExtras:NavigationExtras = {
           queryParams:{
             id: e[0].id,
             usuario: this.usuario1,
-            cedula: this.cedula1
+            cedula: this.cedula1,
           }
+          
         }
-       
+        
         this.router.navigate(['/principal'],NavigationExtras);
       
       }else{

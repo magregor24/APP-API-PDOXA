@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
 
   id$= new EventEmitter<number>();
+  idProfe = new EventEmitter<number>();
   constructor( private http:HttpClient) { }
 
 

@@ -58,9 +58,7 @@ export class ProfesoresPage implements OnInit {
      });
  
      await modal.present();
- 
-     const {data} = await modal.onDidDismiss();
-     console.log('retorno del modal', data);
+
    }
 
 }

@@ -9,18 +9,12 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
+
   @ViewChild('menu') menu:IonMenu;
   id = 0;
   id2;
   
-
-  constructor(private route:ActivatedRoute, 
-              public router:Router,
-              private data:DataService) {
-              
-              
-    
-   }
+  constructor(public router:Router, private data:DataService) {}
 
   ngOnInit() {
 
@@ -28,39 +22,29 @@ export class MenuComponent implements OnInit {
       this.id = p;
     })
 
-    
-    
+    this.data.idProfe.subscribe(p =>{
+      this.id2 = p;
+    })
+
   }
 
-  
-
-
   click(){
-   
+     this.id = 0;
     this.router.navigate(['/inicio']);
-    
-    
+  
   }
 
  modalPag(event){
-
-  this.route.queryParams.subscribe(params =>{
-    this.id2 = params.id;
-  })
-
-  let Navi:NavigationExtras = {
-    queryParams:{
-      id: this.id2,
-      dia:event.target.innerText
-    }
+ 
+ let Navi:NavigationExtras = {
+  queryParams:{
+    id: this.id2,
+    dia:event.target.innerText
   }
+}
 
-  this.router.navigate(['/modal'],Navi);
-  this.id2 = 0;
-   
+this.router.navigate(['/modal'],Navi);
 
-  
-    
 }
 
 

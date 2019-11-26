@@ -10,14 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 export class ModalPage implements OnInit {
 
   id;
-  datos;
   dia;
+  datos;
   ultimoLapso;
+
   constructor(private route:ActivatedRoute, private data:DataService) { 
 
     this.route.queryParams.subscribe(params =>{
       this.id = params.id;
-      this.dia = params.dia
+      this.dia = params.dia;
     })
   }
 
@@ -32,7 +33,7 @@ export class ModalPage implements OnInit {
       this.ultimoLapso = n['lapsoAcademico'];
 
     })
-
+   
     
     this.data.getDocentesId(this.id).subscribe(p=>{
       
@@ -41,8 +42,7 @@ export class ModalPage implements OnInit {
       })
     })
 
-   
-
+    
   }
 
 
