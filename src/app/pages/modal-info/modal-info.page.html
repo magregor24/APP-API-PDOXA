@@ -21,27 +21,22 @@
 
   </ion-card>
 
-  <ion-grid>
-    <ion-card *ngFor='let d of datos'>
-
-      <ion-item color='success'><h5 text-center>Dia: {{d.dia}}</h5></ion-item>  
-        
-      <ion-row>
-          <ion-col size='6'><h6 text-center>Seccion:{{d.seccion}}</h6></ion-col> 
-          <ion-col size='6'><h6 text-center>Aula:{{d.nombreAula}}</h6> </ion-col> 
-      </ion-row>  
-
-      <ion-row>
-        <ion-col size='12'><h6 text-center>Materia:{{d.materia}}</h6></ion-col> 
+  <ion-grid *ngFor='let d of datos'>
+    <ion-row>
+      <ion-col class='col'><p style="text-align: center;">Dia {{d.dia}} </p></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class='col'><p style="text-align: center;"> {{d.materia}} </p></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="spa"><p>Seccion: {{d.seccion}}</p></ion-col>
+      <ion-col class="spa"><p>Aula: {{d.nombreAula}}</p></ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="span"><span>Inico: {{d.inicio}}</span></ion-col>
+        <ion-col class="span"><span>Fin: {{d.fin}}</span></ion-col>
       </ion-row>
-
-      <ion-row>
-          <ion-col size='6'><h6 text-center>Inicio:{{d.inicio}}</h6></ion-col> 
-          <ion-col size='6'><h6 text-center>Fin:{{d.fin}}</h6> </ion-col> 
-      </ion-row> 
-        
-    </ion-card>
-  </ion-grid>  
+  </ion-grid> 
  
 
 </ion-content>

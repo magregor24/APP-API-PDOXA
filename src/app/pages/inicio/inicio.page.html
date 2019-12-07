@@ -1,17 +1,17 @@
-<ion-header>
-  <ion-toolbar color='dark'>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <div class="content">
 
-    <div class="circle">
-      <div class="circle2"></div>
+    <ion-img src='/assets/4.png'></ion-img>
+    <hr>
+    <hr>
+
+    <div class="container">
+      <h1>Welcome!</h1>
+        <p>Sign up to get an account</p>
     </div>
   
       <form #formulario='ngForm'  (ngSubmit)='validarUsuarioss($event)'>
-        <ion-card>
+        
           <ion-list color='secondary'>
 
             <ion-item>
@@ -36,11 +36,11 @@
             
           </ion-list>
       
-          <ion-button color='medium'  expand='full' type='submit'
+          <ion-button expand='full' type='submit'
                       [disabled]='formulario.invalid' #btn>
                       Ingresar
           </ion-button>
-        </ion-card>
+        
         
         <div class="footer">
           <p>Area de Ingenieria en Sistemas</p> 

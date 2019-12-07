@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
-import { IonSlides } from '@ionic/angular';
+import { IonSlides, IonButton } from '@ionic/angular';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class PrincipalPage implements OnInit {
   @ViewChild('slides') slides:IonSlides;
-  
+  @ViewChild('btn') btn:IonButton;
   id;
   usuario;
   cedula;

@@ -1,12 +1,15 @@
 <ion-header no-border>
-  <ion-toolbar>
+  <ion-toolbar color='toolbar'>
     <ion-buttons slot='start'>
       <ion-back-button defaultHref='/principal'></ion-back-button>
     </ion-buttons>
     <ion-title>profesores</ion-title>
   </ion-toolbar>
+
   <ion-searchbar animated
-                 (ionChange)='buscar($event)'></ion-searchbar>
+                 (ionChange)='buscar($event)'>
+  </ion-searchbar>
+
 </ion-header>
 
 <ion-content>
@@ -14,8 +17,8 @@
     <ion-grid>
         <ion-row>
           <ion-col *ngFor="let p of profesores | filtro:textoBuscar: 'nombre','id' ">
-            <ion-item (click)='profe(p)'>
-                <ion-col size='2' color='dark'> {{p.id}} </ion-col>
+            <ion-item (click)='profe(p)' detail>
+                <ion-col size='2' class="id"> {{p.id}} </ion-col>
                 <ion-label> {{p.nombre}} </ion-label>
                 <ion-label> {{p.apellido}} </ion-label>
             </ion-item>

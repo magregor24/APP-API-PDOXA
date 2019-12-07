@@ -1,23 +1,21 @@
 <ion-header>  
-  <ion-toolbar>
+  <ion-toolbar color='toolbar'>
     <ion-buttons slot='start'>
-      <ion-menu-button  color='primary' menu='first'></ion-menu-button>
+      <ion-menu-button  menu='first'></ion-menu-button>
     </ion-buttons>
-    
     <ion-title text-capitalize>principal</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-
 <ion-slides #slides (ionSlideDidChange)='cambio($event)' scrollbar='true' pager='true' class="slide-full">
   
   <ion-slide (click)='verHorario()'>
-    <ion-card mode='ios'>
-      <ion-img src='/assets/icono-horario.png' class="slide-image"></ion-img>
+    <ion-card mode='ios' class='carduno'>
+      <ion-img src='/assets/2.png' class="slide-image"></ion-img>
       <ion-card-header>
-        <ion-card-title>Horario</ion-card-title>
+        <ion-card-title color='light'>Horario</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <p>Presiona para ver tu horario</p>
@@ -26,7 +24,7 @@
   </ion-slide>
 
   <ion-slide routerLink='/profesores'>
-      <ion-card mode='ios'>
+      <ion-card mode='ios' class='carddos'>
         <ion-img src='/assets/profesores.png' class="slide-image"></ion-img>
         <ion-card-header>
           <ion-card-title>Profesores</ion-card-title>
@@ -38,8 +36,8 @@
   </ion-slide>
 
   <ion-slide>
-      <ion-card mode='ios'>
-        <ion-img src='/assets/descarga2.jpg' class="slide-image"></ion-img>
+      <ion-card mode='ios' class='cardtres'>
+        <ion-img src='/assets/descarga2.png' class="slide-image"></ion-img>
         <ion-card-header>
           <ion-card-title>Descarga</ion-card-title>
         </ion-card-header>
@@ -51,6 +49,12 @@
 
 </ion-slides>
 
-<ion-button expand='full' ></ion-button>
+<ion-grid>
+  <ion-row >
+    <ion-col>Cantida Profesores</ion-col>
+    <ion-col>Cantida Secciones</ion-col>
+    <ion-col>Cantida Aulas</ion-col>
+  </ion-row>
+</ion-grid>
 
 </ion-content>

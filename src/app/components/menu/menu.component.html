@@ -3,16 +3,17 @@
             contentId='principal'
             #menu
             >
-      <ion-header>
-        <ion-toolbar color="primary">
-          <ion-title>Menu</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content>
      
+      <ion-content>
+
+        <div class='img'>
+          
+        </div>
+        
+
         <ion-list *ngIf='id === 0'>
           <ion-menu-toggle>
-            <ion-item ></ion-item>
+            <ion-item>Horario por dia</ion-item>
             <ion-item detail (click)='modalPag($event)'>Lunes</ion-item>
             <ion-item detail (click)='modalPag($event)'>Martes</ion-item>
             <ion-item #mie detail (click)='modalPag($event)'>Miercoles</ion-item>

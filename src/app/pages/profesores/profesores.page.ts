@@ -34,7 +34,7 @@ export class ProfesoresPage implements OnInit {
 
     setTimeout(()=> {
       
-     this.datos.getDocentes(this.a+=10)
+     this.datos.getDocentes(this.a+=100)
       .subscribe(docentes => {
         this.profesores = docentes;
       })
